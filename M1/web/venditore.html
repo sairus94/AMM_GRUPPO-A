@@ -21,17 +21,17 @@ and open the template in the editor.
     
    </ul>
 </nav>
-        <form action="inserisci oggetto" method="post">
+        <form action="oggetto" method="post">
   Articolo: <input type="text" name="nome oggetto"><br>
   Immagine: <input type="text" name="testo"><br>
   Prezzo:<br>
   <select name="Prezzo">
-  <option value="minimo"> <10€ </option>
+  <option value="minimo"> -10€ </option>
   <option value="medio"> 10€-100€</option>
   <option value="alto"> oltre 100€</option>
   </select>
   <br>
-  
+        </form>
   <form action="quantità" method="post">
   <label>Quantità:
     <input type="number" name="quantità" min="1" max="100" step="1">
