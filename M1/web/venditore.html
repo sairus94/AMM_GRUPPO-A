@@ -7,6 +7,9 @@ and open the template in the editor.
 <html>
     <head>
         <title>Venditore</title>
+        <meta name="keywords" content="gioco d'azzardo,donne,CiCiro,cerca,informazioni">
+        <meta name="description" content="sito di E-commerce">
+        <meta name="author" content="Ciro Borrelli">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -18,6 +21,28 @@ and open the template in the editor.
     
    </ul>
 </nav>
-       
+        <form action="inserisci oggetto" method="post">
+  Articolo: <input type="text" name="nome oggetto"><br>
+  Immagine: <input type="text" name="testo"><br>
+  Prezzo:<br>
+  <select name="Prezzo">
+  <option value="minimo"> <10€ </option>
+  <option value="medio"> 10€-100€</option>
+  <option value="alto"> oltre 100€</option>
+  </select>
+  <br>
+  
+  <form action="quantità" method="post">
+  <label>Quantità:
+    <input type="number" name="quantità" min="1" max="100" step="1">
+  </label>
+</form>
+  Descrizione oggetto:<br>
+
+  <textarea name="commento" rows="15" cols="30"></textarea>
+  <br><br>
+
+  
+  
     </body>
 </html>
