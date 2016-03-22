@@ -21,27 +21,28 @@ and open the template in the editor.
     
    </ul>
 </nav>
-        <form action="oggetto" method="post">
-  Articolo: <input type="text" name="nome oggetto"><br>
-  Immagine: <input type="text" name="testo"><br>
-  Prezzo:<br>
+        <form method="get">
+            <label for ="nomeogg"> Articolo: </label>
+            <input type="text" id="nomeogg" name="nomeogg">
+            <br />
+             <label for ="immagine"> Immagine: </label>
+            <input type="url" id="immagine" name="immagine">
+            <br />
+            <label for ="quantità"> Quantità:</label>
+    <input type="number" name="quantità" min="1" max="100" step="1">
+           <br />
+  Prezzo:
   <select name="Prezzo">
   <option value="minimo"> -10€ </option>
   <option value="medio"> 10€-100€</option>
   <option value="alto"> oltre 100€</option>
   </select>
-  <br>
+  <br />
+
+         <label for ="descrizione"> Descrizione: </label>            
+         <textarea name="descrizione" rows="15" cols="30"></textarea>
+         <br />
         </form>
-  <form action="quantità" method="post">
-  <label>Quantità:
-    <input type="number" name="quantità" min="1" max="100" step="1">
-  </label>
-</form>
-  Descrizione oggetto:<br>
-
-  <textarea name="commento" rows="15" cols="30"></textarea>
-  <br><br>
-
   
   
     </body>
