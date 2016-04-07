@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+              <link rel="stylesheet" type="text/css" href="style.css"
+ media="screen">
+        <title>Venditore</title>
+        <meta name="keywords" content="gioco d'azzardo,donne,CiCiro,cerca,informazioni">
+        <meta name="description" content="sito di E-commerce">
+        <meta name="author" content="Ciro Borrelli">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body> <div id="header">
+         <ul class='navbar'> 
+       <li><a href="login.html">Login</a></li>
+       <li><a href="descrizione.html">Home</a></li>
+       <li><a href="cliente.html">Compra</a></li>
+       <li><a href="venditore.html">Vendi</a></li>
+    
+         </ul>
+        </div>   
+        
+        <div id="content"> 
+            <div id="vendform">
+                <form method="get">
+                    <div class="text-input">
+                        <label for ="nomeogg"> Articolo: </label>
+                        <input type="text" id="nomeogg" name="nomeogg">
+                    </div>
+                   <div class="text-input">
+                        <label for ="immagine"> Immagine: </label>
+                        <input type="url" id="immagine" name="immagine">
+                   </div>
+                   <div class="text-input">
+                        <label for ="quantità"> Quantità:</label>
+                        <input type="number" name="quantità" min="1" max="100" step="1">
+                   </div>
+                   <div class="text-input"> 
+                        Prezzo:
+                        <select name="Prezzo">
+                        <option value="minimo"> -10€ </option>
+                        <option value="medio"> 10€-100€</option>
+                        <option value="alto"> oltre 100€</option>
+                        </select>
+                   </div>
+                   <div class="price">
+                        <label for ="descrizione"> Descrizione: </label>            
+                        <textarea name="descrizione" rows="15" cols="30"></textarea>
+                   </div>
+                    <input type="submit" value="INSERISCI OGGETTO" class="button">
+               </form>
+            </div>
+      </div>
+  
+  
+    </body>
+</html>
