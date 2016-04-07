@@ -1,0 +1,146 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 30, 2016, 5:19:59 PM
+    Author     : Ciro
+*/
+ @media all and (max-width: 1024px) {
+body {
+    color:white;
+    font-size: 1.5em;
+    background-image: url("./img/sfondo.png");
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+h1{
+    color: red;
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;    
+}
+
+h2{
+    font-size: 3em;
+    font-style: italic;
+    text-decoration: underline;
+    color: red;
+}
+
+h3{
+    font-size: 1.8em;
+    
+}
+
+p{
+    font-weight: 1.3em;
+}
+
+ul.navbar{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.navbar li{
+    display: inline;
+    padding: 30px;
+    text-align: center;
+    
+}
+
+table {
+    color: black;
+    border-collapse: collapse;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+ 
+tr:nth-child(odd) {
+    background-color: burlywood;
+}
+ 
+tr:nth-child(even) {
+    background-color: white;
+}
+
+td {
+    border: 1px solid black;
+    width: 25%;
+
+ }
+ }
+ @media all and (min-width: 1024px) {
+a:link {
+    color: red;
+    font-size: 1.5em;
+}
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: yellow;
+}
+
+
+.text-input {
+    text-align: left;
+        margin-bottom: 40px;
+        width: 100%;
+        display: block;
+        float: right;
+}
+
+.button {
+    position: relative;
+    width: 20%   
+}
+.text-login {
+    text-align: left;
+    padding: 8px;
+    float: left;
+    margin-left: 10px;
+}
+
+.log-form {
+    width: 100%;
+    float: right;  
+}
+
+.log-butt {
+    position: relative;
+    width: 100%;
+}
+input,textarea{
+    border: 2px solid red;
+    width: 25%;
+    padding: 6px 10px;
+    margin-right: 800px;
+    margin-top: 10px;
+    float: right;
+   
+}
+
+
+a:active { 
+    background-color: dodgerblue;
+}
+
+input:focus { 
+    background-color: yellow;
+}
+ }
+
+				
+
+
+                                
+                                  
+                                    
