@@ -33,7 +33,8 @@ and open the template in the editor.
     .vendform {
         width: 50%;  
     }   
-}
+   
+    }
 
 @media all and (max-width: 480px){
     .page {
@@ -54,6 +55,7 @@ and open the template in the editor.
     .vendform {
         width: 100%;
     }
+    
 }
 body {
     color:white;
@@ -208,9 +210,9 @@ a:active {
 }
 
 .btn {
-    display:block;
+    display: block;
     padding: 5px;
     width: 50%;
     margin: 0 auto;
-    float: none;
+    float: right;
 }
