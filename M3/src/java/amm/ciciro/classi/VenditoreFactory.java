@@ -32,14 +32,14 @@ public class VenditoreFactory {
         
         
         Venditore venditore0 = new Venditore ();
-        venditore0.setUserId(100);
+        venditore0.setId(100);
         venditore0.setNome("Babbo");
         venditore0.setCognome("Natale");
-        venditore0.setUsername("Claus");
-        venditore0.setPassword("renna");
+        venditore0.setUsername("babbo");
+        venditore0.setPassword("cc");
         
         Venditore venditore1 = new Venditore ();
-        venditore1.setUserId(101);
+        venditore1.setId(101);
         venditore1.setNome("Andrea");
         venditore1.setCognome("Casti");
         venditore1.setUsername("aereo");
@@ -51,7 +51,7 @@ public class VenditoreFactory {
     public Venditore getVenditoreById(int id){
         ArrayList<Venditore> VenditoreList = this.getVenditoreList();
         for( Venditore venditore : VenditoreList){
-            if(venditore.getUserId() == id){
+            if(venditore.getId() == id){
                 return venditore;
             }
         }

@@ -12,6 +12,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import amm.ciciro.classi.Account;
+import amm.ciciro.classi.AccountFactory;
+import amm.ciciro.classi.Compratore;
+import amm.ciciro.classi.Oggetto;
+import amm.ciciro.classi.OggettoFactory;
 
 /**
  *
@@ -33,7 +38,7 @@ public class Cliente extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
             
-        HttpSession session = request.getSession();
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -11,24 +11,24 @@ package amm.ciciro.classi;
  */
 public class Venditore {
     
-    private int userId;
+    private int Id;
     private String nome;
     private String cognome;
     private String username;
     private String password;
 
     /**
-     * @return the userId
+     * @return the Id
      */
-    public int getUserId() {
-        return userId;
+    public int getId() {
+        return Id;
     }
 
     /**
-     * @param userId the userId to set
+     * @param Id the Id to set
      */
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setId(int Id) {
+        this.Id = Id;
     }
 
     /**
@@ -86,5 +86,5 @@ public class Venditore {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
 }

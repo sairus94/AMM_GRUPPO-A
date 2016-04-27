@@ -12,6 +12,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import amm.ciciro.classi.Account;
+import amm.ciciro.classi.AccountFactory;
+import amm.ciciro.classi.Compratore;
+import amm.ciciro.classi.Oggetto;
+import amm.ciciro.classi.OggettoFactory;
 
 /**
  *
