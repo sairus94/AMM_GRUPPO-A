@@ -61,19 +61,7 @@ public class Login extends HttpServlet {
                       //Manca la servlet 
                     }
             }
-        } 
-        else {
-            request.setAttribute("Login_Fallito", true);
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        }
-                  
-        
-        // Login del venditore
-        
-           if(request.getParameter("Submit") != null)    
-        {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
+            
             ArrayList<Venditoree> venditoreList = VenditoreeFactory.getInstance().getVenditoreList();
             for(Venditoree v : venditoreList)
                   
@@ -85,17 +73,19 @@ public class Login extends HttpServlet {
                       session.setAttribute("Utente", v);
                       response.sendRedirect("venditore.html");
                       return;
-                       
                     }
-            }
-            
-        } 
-        
+        else {
+            request.setAttribute("Login_Fallito", true);
             request.getRequestDispatcher("login.jsp").forward(request, response);
-        
-           
-        
+        }
+            }
+        }
     }
+                  
+        
+        
+        
+            
         
 
 
