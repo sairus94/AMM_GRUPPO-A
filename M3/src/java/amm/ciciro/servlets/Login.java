@@ -58,7 +58,7 @@ public class Login extends HttpServlet {
                       session.setAttribute("Utente", c);
                       response.sendRedirect("cliente.html");
                       return;
-                      //Manca la servlet 
+                      
                     }
             }
             
@@ -74,11 +74,13 @@ public class Login extends HttpServlet {
                       response.sendRedirect("venditore.html");
                       return;
                     }
-        else {
+       
+            }
+            
+        }
+         else {
             request.setAttribute("Login_Fallito", true);
             request.getRequestDispatcher("login.jsp").forward(request, response);
-        }
-            }
         }
     }
                   
