@@ -7,8 +7,8 @@ package amm.ciciro.servlets;
 
 import amm.ciciro.classi.Compratore;
 import amm.ciciro.classi.CompratoreFactory;
-import amm.ciciro.classi.Venditore;
-import amm.ciciro.classi.VenditoreFactory;
+import amm.ciciro.classi.Venditoree;
+import amm.ciciro.classi.VenditoreeFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Ciro
  */
-@WebServlet(name = "LoginC", urlPatterns = {"/login.html"})
+@WebServlet(name = "Login", urlPatterns = {"/login.html"})
 public class Login extends HttpServlet {
 
     /**
@@ -41,6 +41,9 @@ public class Login extends HttpServlet {
        
             HttpSession session = request.getSession(true);
 
+            
+            //Login del compratore
+            
         if(request.getParameter("Submit") != null)    
         {
             String username = request.getParameter("username");
@@ -52,35 +55,45 @@ public class Login extends HttpServlet {
                     if(c.getUsername().equals(username)&&
                        c.getPassword().equals(password))
                     {
-                       
-                       request.getRequestDispatcher("cliente.jsp").forward(request,response);
+                      session.setAttribute("Utente", c);
+                      response.sendRedirect("cliente.html");
+                      return;
+                      //Manca la servlet 
                     }
             }
         } 
         else {
+            request.setAttribute("Login_Fallito", true);
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
- 
-                
+                  
+        
+        // Login del venditore
+        
            if(request.getParameter("Submit") != null)    
         {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            ArrayList<Venditore> venditoreList = VenditoreFactory.getInstance().getVenditoreList();
-            for(Venditore v : venditoreList)
+            ArrayList<Venditoree> venditoreList = VenditoreeFactory.getInstance().getVenditoreList();
+            for(Venditoree v : venditoreList)
                   
             {
                     if(v.getUsername().equals(username)&&
                        v.getPassword().equals(password))
+                        
                     {
+                      session.setAttribute("Utente", v);
+                      response.sendRedirect("venditore.html");
+                      return;
                        
-                       request.getRequestDispatcher("venditore.jsp").forward(request,response);
                     }
             }
+            
         } 
-        else {
+        
             request.getRequestDispatcher("login.jsp").forward(request, response);
-        }
+        
+           
         
     }
         

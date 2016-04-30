@@ -11,21 +11,21 @@ package amm.ciciro.classi;
  */
 public class Account {
     
-     private int Id;
+     private int id;
      private double soldi; 
 
     /**
-     * @return the Id
+     * @return the id
      */
     public int getId() {
-        return Id;
+        return id;
     }
 
     /**
-     * @param Id the Id to set
+     * @param id the id to set
      */
-    public void setId(int Id) {
-        this.Id = Id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -41,4 +41,5 @@ public class Account {
     public void setSoldi(double soldi) {
         this.soldi = soldi;
     }
+
 }

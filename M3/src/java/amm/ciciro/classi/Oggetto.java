@@ -16,8 +16,21 @@ public class Oggetto {
     private int venditoreId;
     private double prezzo;
     private String nome;
-    private String Url;
+    private String url;
+    private String descrizione;
     
+    public Oggetto(){
+    } 
+    public Oggetto(int quantità, int id, int venditoreId, double prezzo, String nome, String Url, String descrizione)
+    {
+        this.quantità = quantità;
+        this.id = id;
+        this.venditoreId = venditoreId;
+        this.prezzo = prezzo;
+        this.nome = nome;
+        this.url = url;
+        this.descrizione = descrizione;
+    }
 
     /**
      * @return the quantità
@@ -93,14 +106,28 @@ public class Oggetto {
      * @return the url
      */
     public String getUrl() {
-        return Url;
+        return url;
     }
 
     /**
-     * @param Url the Url to set
+     * @param url the url to set
      */
-    public void setUrl(String Url) {
-        this.Url = Url;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
+    /**
+     * @return the descrizione
+     */
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    /**
+     * @param descrizione the descrizione to set
+     */
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
+    
 }

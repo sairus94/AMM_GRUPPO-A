@@ -38,7 +38,7 @@ and open the template in the editor.
                      <h4>Set di chips</h4>
                      <p>Prezzo: 149€</p>
                      <p>Disponibilità: 7</p>
-                     <a href="cliente.html"><button class="btn">Aggiungi al carrello</button></a>
+                     <a href="cliente.html"><button class="btn">Acquisto</button></a>
                   </td>
                   <td>
                      <img src="./img/donne.jpg" alt="sorry wait" width="210" height="210"/>
@@ -47,7 +47,7 @@ and open the template in the editor.
                      <h4>Donna dell'est</h4>
                      <p>Prezzo: 70€ all'ora</p>
                      <p>Disponibilità: Esaurito</p>
-                      <a href="cliente.html"><button class="btn">Aggiungi al carrello</button></a>
+                      <a href="cliente.html"><button class="btn">Acquisto</button></a>
                   </td>
                </tr>
                <tr>
@@ -58,7 +58,7 @@ and open the template in the editor.
                      <h4>Mazzo di carte</h4>
                      <p>Prezzo: 99€</p>
                      <p>Disponibilità: 5</p>
-                      <a href="cliente.html"><button class="btn">Aggiungi al carrello</button></a>
+                      <a href="cliente.html"><button class="btn">Acquisto</button></a>
                   </td>
                   <td>
                      <a href="cliente.html"><img src='./img/tavolo.jpg' alt="sorry wait" width="210" height="210"/></a>
@@ -67,7 +67,7 @@ and open the template in the editor.
                      <h4>Tavolo da poker</h4>
                      <p>Prezzo: 299€</p>
                      <p>Disponibilità: 6</p>
-                      <a href="cliente.html"><button class="btn">Aggiungi al carrello</button></a>
+                      <a href="cliente.html"><button class="btn">Acquisto</button></a>
                   </td>
                </tr>
                <tr>
@@ -78,7 +78,7 @@ and open the template in the editor.
                      <h4>Pistola contro i bari</h4>
                      <p>Prezzo: 499€</p>
                      <p>Disponibilità: Esaurito</p>
-                      <a href="cliente.html"><button class="btn">Aggiungi al carrello</button></a>
+                      <a href="cliente.html"><button class="btn">Acquisto</button></a>
                   </td>
                   <td>
                      <a href="cliente.html"> <img src="./img/slot.jpg" alt="sorry wait" width="210" height="210"/></a>
@@ -87,7 +87,7 @@ and open the template in the editor.
                      <h4>Slot machine</h4>
                      <p>Prezzo: 999€</p>
                      <p>Disponibilità: 2</p>
-                      <a href="cliente.html"><button class="btn">Aggiungi al carrello</button></a>
+                      <a href="cliente.html"><button class="btn">Acquisto</button></a>
                   </td>
                </tr>
             </table>

@@ -10,48 +10,50 @@ import java.util.ArrayList;
  *
  * @author Ciro
  */
-public class VenditoreFactory {
+public class VenditoreeFactory {
     
     
-    private static VenditoreFactory singleton;
+    private static VenditoreeFactory singleton;
 
-    public static VenditoreFactory getInstance() {
+    public static VenditoreeFactory getInstance() {
         if (singleton == null) {
-            singleton = new VenditoreFactory();
+            singleton = new VenditoreeFactory();
         }
         return singleton;
     }
     
-    private VenditoreFactory (){
+    private VenditoreeFactory (){
         
     }
     
-    public ArrayList<Venditore> getVenditoreList (){
+    public ArrayList<Venditoree> getVenditoreList (){
         
-        ArrayList<Venditore> VenditoreList = new ArrayList<>  ();
+        ArrayList<Venditoree> VenditoreList = new ArrayList<>  ();
         
         
-        Venditore venditore0 = new Venditore ();
-        venditore0.setId(100);
+        Venditoree venditore0 = new Venditoree ();
+        venditore0.setUserId(100);
         venditore0.setNome("Babbo");
         venditore0.setCognome("Natale");
         venditore0.setUsername("babbo");
         venditore0.setPassword("cc");
+        VenditoreList.add(venditore0);
         
-        Venditore venditore1 = new Venditore ();
-        venditore1.setId(101);
+        Venditoree venditore1 = new Venditoree ();
+        venditore1.setUserId(101);
         venditore1.setNome("Andrea");
         venditore1.setCognome("Casti");
         venditore1.setUsername("aereo");
         venditore1.setPassword("plano");
+        VenditoreList.add(venditore1);
         
         return VenditoreList; 
     }
     
-    public Venditore getVenditoreById(int id){
-        ArrayList<Venditore> VenditoreList = this.getVenditoreList();
-        for( Venditore venditore : VenditoreList){
-            if(venditore.getId() == id){
+    public Venditoree getVenditoreById(int id){
+        ArrayList<Venditoree> VenditoreList = this.getVenditoreList();
+        for( Venditoree venditore : VenditoreList){
+            if(venditore.getUserId() == id){
                 return venditore;
             }
         }

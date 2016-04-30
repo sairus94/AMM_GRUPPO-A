@@ -9,26 +9,26 @@ package amm.ciciro.classi;
  *
  * @author Ciro
  */
-public class Venditore {
+public class Venditoree {
     
-    private int Id;
+    private int userId;
     private String nome;
     private String cognome;
     private String username;
     private String password;
 
     /**
-     * @return the Id
+     * @return the userId
      */
-    public int getId() {
-        return Id;
+    public int getUserId() {
+        return userId;
     }
 
     /**
-     * @param Id the Id to set
+     * @param userId the userId to set
      */
-    public void setId(int Id) {
-        this.Id = Id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     /**
@@ -86,5 +86,7 @@ public class Venditore {
     public void setPassword(String password) {
         this.password = password;
     }
-
+    
+    
 }
+

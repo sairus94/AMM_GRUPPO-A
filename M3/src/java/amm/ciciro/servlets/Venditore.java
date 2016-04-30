@@ -12,11 +12,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import amm.ciciro.classi.Account;
-import amm.ciciro.classi.AccountFactory;
-import amm.ciciro.classi.Compratore;
+import amm.ciciro.classi.Venditoree;
 import amm.ciciro.classi.Oggetto;
-import amm.ciciro.classi.OggettoFactory;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -37,8 +35,38 @@ public class Venditore extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        HttpSession session  = request.getSession();
+        
+        if(session != null){
+       
+               if(request.getParameter("InserisciOggetto") != null){
+                   int quantità = 0;
+                   String nome = request.getParameter("NomeOggetto");
+                   String descrizione = request.getParameter("DescrizioneOggetto");
+                   double prezzo = 0;
+                   String url = request.getParameter("UrlOggetto");
+                   
+                   if(quantità > 0 && nome != null && descrizione != null && prezzo > 0 && url != null){
+                       Oggetto oggettoPostato =  new Oggetto(quantità, 100, 100, prezzo, nome, url, descrizione);
+                       request.setAttribute("oggettoPostato", oggettoPostato);
+                       request.getRequestDispatcher("venditore.jsp").forward(request, response);
+                   }
+                  
+                   else{
+                        request.getRequestDispatcher("venditore.jsp").forward(request, response);
+                   } 
+               }
+                else{
+                       request.getRequestDispatcher("venditore.jsp").forward(request, response);
+                   }
+               
+           } 
+        
+            
+        }
 
-    }
+ 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

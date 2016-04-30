@@ -41,6 +41,8 @@ public class OggettoFactory {
         oggetto0.setPrezzo(149.99);
         oggetto0.setNome("Set di chips");
         oggetto0.setUrl("./img/chips.jpg");
+        oggetto0.setDescrizione("generico");
+        OggettoList.add(oggetto0);
         
         /* oggetto 1
         
@@ -53,7 +55,8 @@ public class OggettoFactory {
         oggetto1.setPrezzo(0);
         oggetto1.setNome("Donna dell'est");
         oggetto1.setUrl("./img/donne.jpg");
-        
+        oggetto1.setDescrizione("generico");
+        OggettoList.add(oggetto1);
         /* oggetto 2
         
         */
@@ -65,7 +68,8 @@ public class OggettoFactory {
         oggetto2.setPrezzo(99.99);
         oggetto2.setNome("Mazzo di carte");
         oggetto2.setUrl("./img/cards.jpg");
-        
+        oggetto2.setDescrizione("generico");
+        OggettoList.add(oggetto2);
         /* oggetto 3
         
         */
@@ -77,7 +81,8 @@ public class OggettoFactory {
         oggetto3.setPrezzo(299.99);
         oggetto3.setNome("Tavolo da poker");
         oggetto3.setUrl("./img/tavolo.jpg");
-        
+        oggetto3.setDescrizione("generico");
+        OggettoList.add(oggetto3);
         /* oggetto 4
         
         */
@@ -89,7 +94,8 @@ public class OggettoFactory {
         oggetto4.setPrezzo(499.99);
         oggetto4.setNome("Pistola contro i bari");
         oggetto4.setUrl("./img/pistola.jpg");
-        
+        oggetto4.setDescrizione("generico");
+        OggettoList.add(oggetto4);
         /* oggetto 5
         
         */
@@ -101,7 +107,9 @@ public class OggettoFactory {
         oggetto5.setPrezzo(999.99);
         oggetto5.setNome("Slot machine");
         oggetto5.setUrl("./img/slot.jpg");
-      
+        oggetto5.setDescrizione("generico");
+        OggettoList.add(oggetto5);
+        
         return OggettoList;
     }
     

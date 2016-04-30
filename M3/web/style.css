@@ -216,3 +216,11 @@ a:active {
     margin: 0 auto;
     float: right;
 }
+
+.errore {
+    display: block;
+    float: right;
+    color: yellow;
+    font-size: 3em;
+        
+}

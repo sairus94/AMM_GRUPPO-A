@@ -17,6 +17,8 @@ import amm.ciciro.classi.AccountFactory;
 import amm.ciciro.classi.Compratore;
 import amm.ciciro.classi.Oggetto;
 import amm.ciciro.classi.OggettoFactory;
+import java.util.ArrayList;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -37,8 +39,31 @@ public class Cliente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-            
+        
+            HttpSession session = request.getSession();
        
+            if(session != null){
+                 ArrayList<Oggetto> OggettoList = OggettoFactory.getInstance().getOggettoList();
+                 if(request.getParameter("Acquisto") != null){
+                   int OggettoId = 0;
+                   double OggettoPrezzo = 0;
+                   OggettoFactory.getInstance().getoggettoById(OggettoId).getPrezzo();
+                   int OggettoQuantità = 0;
+                   OggettoFactory.getInstance().getoggettoById(OggettoId).getQuantità();
+                   double Soldi = 0;
+                   AccountFactory.getIstance().getaccountById(OggettoId).getSoldi();
+                   
+                   if(OggettoPrezzo < Soldi && OggettoQuantità > 0){
+                       request.setAttribute("Complimenti", true);
+                       request.getRequestDispatcher("cliente.jsp").forward(request, response);    
+                   }
+                   else {
+                       request.setAttribute("Riprova", true);
+                       request.getRequestDispatcher("cliente.jsp").forward(request, response);
+                   }
+                   
+                 }
+            }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
