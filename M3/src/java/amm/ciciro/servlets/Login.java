@@ -55,7 +55,8 @@ public class Login extends HttpServlet {
                     if(c.getUsername().equals(username)&&
                        c.getPassword().equals(password))
                     {
-                      session.setAttribute("Utente", c);
+                      session.setAttribute("utente_autenticato", c);  
+                      session.setAttribute("compratore_autenticato", c);
                       response.sendRedirect("cliente.html");
                       return;
                       
@@ -70,16 +71,19 @@ public class Login extends HttpServlet {
                        v.getPassword().equals(password))
                         
                     {
-                      session.setAttribute("Utente", v);
+                      session.setAttribute("utente_autenticato", v);  
+                      session.setAttribute("venditore_autenticato", v);
                       response.sendRedirect("venditore.html");
                       return;
                     }
        
             }
-            
+            if( session.getAttribute("utente_autenticato") == null){
+                session.setAttribute("login_fallito", true);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
         }
          else {
-            request.setAttribute("Login_Fallito", true);
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }

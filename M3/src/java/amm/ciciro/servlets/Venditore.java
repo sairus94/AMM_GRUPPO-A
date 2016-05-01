@@ -38,6 +38,8 @@ public class Venditore extends HttpServlet {
         
         HttpSession session  = request.getSession();
         
+        if(session.getAttribute("venditore_autenticato") != null){
+        
         if(session != null){
        
                if(request.getParameter("InserisciOggetto") != null){
@@ -66,7 +68,7 @@ public class Venditore extends HttpServlet {
             
         }
 
- 
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

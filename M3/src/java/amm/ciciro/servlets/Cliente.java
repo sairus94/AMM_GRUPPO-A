@@ -41,30 +41,51 @@ public class Cliente extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
             HttpSession session = request.getSession();
-       
+            
             if(session != null){
                  ArrayList<Oggetto> OggettoList = OggettoFactory.getInstance().getOggettoList();
-                 if(request.getParameter("Acquisto") != null){
-                   int OggettoId = 0;
-                   double OggettoPrezzo = 0;
-                   OggettoFactory.getInstance().getoggettoById(OggettoId).getPrezzo();
-                   int OggettoQuantità = 0;
-                   OggettoFactory.getInstance().getoggettoById(OggettoId).getQuantità();
-                   double Soldi = 0;
-                   AccountFactory.getIstance().getaccountById(OggettoId).getSoldi();
-                   
-                   if(OggettoPrezzo < Soldi && OggettoQuantità > 0){
-                       request.setAttribute("Complimenti", true);
+                if(session.getAttribute("compratore_autenticato") != null){
+                     Compratore nuovoCompratore = (Compratore) session.getAttribute("compratore_autenticato");
+                     request.setAttribute("compratore", nuovoCompratore);
+             
+                
+                 if(request.getParameter("acquisto") != null){
+                   int oggettoId = Integer.parseInt(request.getParameter("acquisto"));
+                   double oggettoPrezzo = OggettoFactory.getInstance().getoggettoById(oggettoId).getPrezzo();
+                   int oggettoQuantità = OggettoFactory.getInstance().getoggettoById(oggettoId).getQuantità();
+                   double soldi = AccountFactory.getIstance().getaccountById(oggettoId).getSoldi();
+                  
+                   if(oggettoPrezzo < soldi && oggettoQuantità > 0){
+                       request.setAttribute("complimenti", true);
                        request.getRequestDispatcher("cliente.jsp").forward(request, response);    
                    }
-                   else {
-                       request.setAttribute("Riprova", true);
+                    else {
+                       request.setAttribute("riprova", true);
                        request.getRequestDispatcher("cliente.jsp").forward(request, response);
                    }
-                   
+                 
                  }
+                 else 
+                     if(request.getParameter("oggettoId") != null){
+                        int oggettoId = Integer.parseInt(request.getParameter("oggettoId"));
+                        Oggetto oggetto = OggettoFactory.getInstance().getoggettoById(oggettoId);
+                        request.setAttribute("dettagli",oggetto);
+                        request.getRequestDispatcher("cliente.jsp").forward(request, response);
+                     }
+                     else{
+                         request.setAttribute("oggettoList",OggettoList);
+                          request.getRequestDispatcher("cliente.jsp").forward(request, response);  
+                     }
+            
+                }
+                else{
+                    request.setAttribute("errore",true);
+                    request.getRequestDispatcher("cliente.jsp").forward(request, response);
+                }
             }
+            
     }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

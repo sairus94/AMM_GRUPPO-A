@@ -31,7 +31,7 @@ and open the template in the editor.
           <%@include file="sidebar.jsp"%>
       <div class="content">
           <c:choose>
-              <c:when test="${empty Utente}">
+              <c:when test="${empty utente_autenticato}">
           <div class="vendform">
               <form method="get" action="login.html">
                 <div class="text-input">
@@ -42,14 +42,14 @@ and open the template in the editor.
                    <label for ="password"> Password: </label>
                    <input type="password" id="password" name="password">
                 </div>
-                <c:if test="${not empty Login_Fallito}">
+                <c:if test="${not empty login_fallito}">
                     <div class="errore"> Login fallito! </div>
                 </c:if>
                    <input type="submit" value="LOGIN" name="Submit" class="btn">
              </form>
            </div>
               </c:when>
-              <c:otherwise> <h2>Benvenuto ${Utente.username}</h2></c:otherwise>
+              <c:otherwise> <h2>Benvenuto ${utente_autenticato.username}</h2></c:otherwise>
           </c:choose>
       </div> 
       <%@ include  file="footer.jsp"%>
