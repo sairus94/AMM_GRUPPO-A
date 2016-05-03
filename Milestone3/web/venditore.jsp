@@ -62,9 +62,9 @@ and open the template in the editor.
                   <textarea id="descrizione" name="descrizione" rows="15" cols="30"></textarea>
                </div>
                <c:if test="${not empty error}">
-                   <h1> Dati sbagliati</h1>
+                   <h2 class="Datisb"> Dati sbagliati</h2>
                </c:if>
-               <input type="submit" value="INSERISCI OGGETTO" class="btn">
+               <input type="submit" value="INSERISCI OGGETTO" name ="Submit" class="btn">
             </form>
          </div>
               </c:when>
