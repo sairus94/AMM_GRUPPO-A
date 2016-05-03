@@ -47,10 +47,10 @@ public class Venditore extends HttpServlet {
                    String descrizione = request.getParameter("descrizioneOggetto");
                    double prezzo = 0;
                    String url = request.getParameter("urlOggetto");
-                   if (request.getParameter("quantitàOggetto").matches("\\d+")){
+                   if (request.getParameter("quantitàOggetto") != null){
                         quantità = Integer.parseInt(request.getParameter("quantitàOggetto"));
                    }
-                    if (request.getParameter("prezzoOggetto").matches("[0-9]+(\\.[0-9][0-9]?)?")){
+                    if (request.getParameter("prezzoOggetto") != null){
                         prezzo = Double.parseDouble(request.getParameter("itemPrice"));
                     }
                    if(quantità > 0 && nome != null && descrizione != null && prezzo > 0 && url != null){
