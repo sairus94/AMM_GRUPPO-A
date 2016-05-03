@@ -46,19 +46,19 @@ and open the template in the editor.
                   <input type="text" id="oggettoNome" name="oggettoNome">
                </div>
                <div class="text-input">
-                  <label for ="url"> Immagine: </label>
-                  <input type="url" id="url" name="url">
+                  <label for ="oggettoUrl"> Immagine: </label>
+                  <input type="url" id="oggettoUrl" name="oggettoUrl">
                </div>
                <div class="text-input">
-                  <label for ="quantità"> Quantità:</label>
-                  <input type="number" id="quantità" name="quantità" min="1" max="100" step="1">
+                  <label for ="oggettoQuantità"> Quantità:</label>
+                  <input type="number" id="oggettoQuantità" name="oggettoQuantità" min="1" max="100" step="1">
                </div>
                <div class="text-input">
                   <label for ="oggettoPrezzo"> Prezzo:</label>
                   <input type="number" id="oggettoPrezzo" name="oggettoPrezzo" min="0">
                </div>
                <div class="text-input">
-                  <label for ="descrizione"> Descrizione: </label>            
+                  <label for ="oggettoDescrizione"> Descrizione: </label>            
                   <textarea id="oggettoDescrizione" name="oggettoDescrizione" rows="15" cols="30"></textarea>
                </div>
                <c:if test="${not empty errore_dati}">
