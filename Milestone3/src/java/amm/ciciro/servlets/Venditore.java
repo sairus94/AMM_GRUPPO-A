@@ -61,7 +61,7 @@ public class Venditore extends HttpServlet {
                    }
                   
                    else{
-                        request.setAttribute("error",true);
+                        request.setAttribute("errore_dati",true);
                         request.getRequestDispatcher("venditore.jsp").forward(request, response);
                    } 
                }
@@ -71,14 +71,14 @@ public class Venditore extends HttpServlet {
                
            } 
          else{
-             request.setAttribute("errore", true);
+             request.setAttribute("errore_login", true);
              request.getRequestDispatcher("venditore.jsp").forward(request, response);
          }
         
             
         }
         else{
-            request.setAttribute("errore", true);
+            request.setAttribute("errore_login", true);
             request.getRequestDispatcher("venditore.jsp").forward(request, response);
         }
 

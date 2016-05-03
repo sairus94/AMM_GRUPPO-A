@@ -38,12 +38,12 @@ and open the template in the editor.
                          <p>Quantità ${oggettoPostato.quantità}</p>
                          <p>Descrizione ${oggettoPostato.descrizione}</p>
               </c:when>
-              <c:when test="${not empty venditore && empty errore}">
+              <c:when test="${not empty venditore && empty errore_login}">
          <div class="vendform">
             <form method="get">
                <div class="text-input">
-                  <label for ="nomeogg"> Articolo: </label>
-                  <input type="text" id="nomeOggetto" name="nomeOggetto">
+                  <label for ="oggettoNome"> Articolo: </label>
+                  <input type="text" id="oggettoNome" name="oggettoNome">
                </div>
                <div class="text-input">
                   <label for ="url"> Immagine: </label>
@@ -54,21 +54,21 @@ and open the template in the editor.
                   <input type="number" id="quantità" name="quantità" min="1" max="100" step="1">
                </div>
                <div class="text-input">
-                  <label for ="prezzo"> Prezzo:</label>
-                  <input type="number" id="prezzo" name="prezzo" min="0">
+                  <label for ="oggettoPrezzo"> Prezzo:</label>
+                  <input type="number" id="oggettoPrezzo" name="oggettoPrezzo" min="0">
                </div>
                <div class="text-input">
                   <label for ="descrizione"> Descrizione: </label>            
-                  <textarea id="descrizione" name="descrizione" rows="15" cols="30"></textarea>
+                  <textarea id="oggettoDescrizione" name="oggettoDescrizione" rows="15" cols="30"></textarea>
                </div>
-               <c:if test="${not empty error}">
+               <c:if test="${not empty errore_dati}">
                    <h2 class="Datisb"> Dati sbagliati</h2>
                </c:if>
                <input type="submit" value="INSERISCI OGGETTO" name ="Submit" class="btn">
             </form>
          </div>
               </c:when>
-              <c:when test="${not empty errore}">
+              <c:when test="${not empty errore_login}">
                   <div class="accesso">Accesso negato!</div>
               </c:when>
           </c:choose>
