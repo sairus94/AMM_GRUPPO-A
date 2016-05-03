@@ -45,7 +45,7 @@ and open the template in the editor.
             Acquistare carte semplici o truccate, a voi la scelta!!
          </h3>
          <p>
-            Un incredibile mazzo di carte che vi permetterà di vincere tutti i soldi dei vostri amici
+            Un incredibile mazzo di carte che vi permettera di vincere tutti i soldi dei vostri amici
          </p>
          <h2 id="tavoli"> Tavoli:
          </h2>
@@ -54,7 +54,7 @@ and open the template in the editor.
             I migliori tavoli da gioco sul mercato!
          </h3>
          <p>
-            Da noi è possibile trovare tavoli da gioco per ogni specialità, 
+            Da noi è possibile trovare tavoli da gioco per ogni specialita, 
             blackjack,poker,roulette e tanti altri.
             Per i più coraggiosi, tavoli con armi incorporate.
          </p>
@@ -67,7 +67,7 @@ and open the template in the editor.
          </h3>
          <p>
             Donne da "compagnia" Mediterranee,Russe,Polacche e tante altre, 
-            da noi ogni desiderio diventa realtà!!
+            da noi ogni desiderio diventa realta!!
          </p>
       </div>
       <%@ include file="footer.jsp"%>

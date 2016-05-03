@@ -44,7 +44,7 @@
                     Prezzo: ${oggetto.prezzo}€
                   </td>
                   <td>
-                     Disponibilità: ${oggetto.quantità}
+                     Disponibilita: ${oggetto.quantita}
                   </td>
                   <td>
                       <a href="cliente.html?oggettoId=${oggetto.id}" class="btn">Acquisto</a>
@@ -58,7 +58,7 @@
                          <h2>Dettagli</h2>
                          <p>Nome ${dettagli.nome}</p>
                          <p>Prezzo ${dettagli.prezzo}</p>
-                         <p>Quantità ${dettagli.quantità}</p>
+                         <p>Quantita ${dettagli.quantita}</p>
                          <p>Descrizione ${dettagli.descrizione}</p>
                          <p>Immagine</p>
                          <img src="${dettagli.url}" alt="Articolo" width="210" height="210"/>

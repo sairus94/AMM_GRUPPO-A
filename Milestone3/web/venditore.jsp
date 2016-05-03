@@ -35,7 +35,7 @@ and open the template in the editor.
                   <img src="${oggettoPostato.url}" alt="Articolo" width="210" height="210">
                          <p>Nome ${oggettoPostato.nome}</p>
                          <p>Prezzo ${oggettoPostato.prezzo}</p>
-                         <p>Quantità ${oggettoPostato.quantità}</p>
+                         <p>Quantita ${oggettoPostato.quantita}</p>
                          <p>Descrizione ${oggettoPostato.descrizione}</p>
               </c:when>
               <c:when test="${not empty venditore && empty errore_login}">
@@ -50,8 +50,8 @@ and open the template in the editor.
                   <input type="url" id="oggettoUrl" name="oggettoUrl">
                </div>
                <div class="text-input">
-                  <label for ="oggettoQuantità"> Quantità:</label>
-                  <input type="number" id="oggettoQuantità" name="oggettoQuantità" min="1" max="100" step="1">
+                  <label for ="oggettoQuantita"> Quantita:</label>
+                  <input type="number" id="oggettoQuantita" name="oggettoQuantita" min="1" max="100" step="1">
                </div>
                <div class="text-input">
                   <label for ="oggettoPrezzo"> Prezzo:</label>

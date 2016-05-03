@@ -52,10 +52,10 @@ public class Cliente extends HttpServlet {
                  if(request.getParameter("acquisto") != null){
                    int oggettoId = Integer.parseInt(request.getParameter("acquisto"));
                    double oggettoPrezzo = OggettoFactory.getInstance().getoggettoById(oggettoId).getPrezzo();
-                   int oggettoQuantità = OggettoFactory.getInstance().getoggettoById(oggettoId).getQuantità();
+                   int oggettoQuantita = OggettoFactory.getInstance().getoggettoById(oggettoId).getQuantita();
                    double soldi = AccountFactory.getIstance().getaccountById(oggettoId).getSoldi();
                   
-                   if(oggettoPrezzo < soldi && oggettoQuantità > 0){
+                   if(oggettoPrezzo < soldi && oggettoQuantita > 0){
                        request.setAttribute("complimenti", true);
                        request.getRequestDispatcher("cliente.jsp").forward(request, response);    
                    }

@@ -11,7 +11,7 @@ package amm.ciciro.classi;
  */
 public class Oggetto {
     
-    private int quantità;
+    private int quantita;
     private int id;
     private int venditoreId;
     private double prezzo;
@@ -21,9 +21,9 @@ public class Oggetto {
     
     public Oggetto(){
     } 
-    public Oggetto(int quantità, int id, int venditoreId, double prezzo, String nome, String Url, String descrizione)
+    public Oggetto(int quantita, int id, int venditoreId, double prezzo, String nome, String Url, String descrizione)
     {
-        this.quantità = quantità;
+        this.quantita = quantita;
         this.id = id;
         this.venditoreId = venditoreId;
         this.prezzo = prezzo;
@@ -33,17 +33,17 @@ public class Oggetto {
     }
 
     /**
-     * @return the quantità
+     * @return the quantita
      */
-    public int getQuantità() {
-        return quantità;
+    public int getQuantita() {
+        return quantita;
     }
 
     /**
-     * @param quantità the quantità to set
+     * @param quantita the quantita to set
      */
-    public void setQuantità(int quantità) {
-        this.quantità = quantità;
+    public void setQuantita(int quantita) {
+        this.quantita = quantita;
     }
 
     /**

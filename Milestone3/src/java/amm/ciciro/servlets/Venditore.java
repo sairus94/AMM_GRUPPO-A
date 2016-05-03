@@ -42,19 +42,19 @@ public class Venditore extends HttpServlet {
          if(session.getAttribute("venditore_autenticato") != null){
              request.setAttribute("venditore",session.getAttribute("venditore_autenticato"));
                if(request.getParameter("Submit") != null){
-                   int quantità = 0;
+                   int quantita = 0;
                    String nome = request.getParameter("oggettoNome");
                    String descrizione = request.getParameter("oggettoDescrizione");
                    double prezzo = 0;
                    String url = request.getParameter("oggettoUrl");
-                   if (request.getParameter("oggettoQuantità") != null && !request.getParameter("oggettoQuantità").isEmpty()){
-                        quantità = Integer.parseInt(request.getParameter("oggettoQuantità"));
+                   if (request.getParameter("oggettoQuantita") != null && !request.getParameter("oggettoQuantita").isEmpty()){
+                        quantita = Integer.parseInt(request.getParameter("oggettoQuantita"));
                    }
-                    if (request.getParameter("oggettoPrezzo") != null && !request.getParameter("oggettoQuantità").isEmpty()){
+                    if (request.getParameter("oggettoPrezzo") != null && !request.getParameter("oggettoPrezzo").isEmpty()){
                         prezzo = Double.parseDouble(request.getParameter("oggettoPrezzo"));
                     }
-                   if(quantità > 0 && nome != null && descrizione != null && prezzo > 0 && url != null){
-                       Oggetto oggettoPostato =  new Oggetto(quantità, 99, 99, prezzo, nome, url, descrizione);
+                   if(quantita > 0 && nome != null && descrizione != null && prezzo > 0 && url != null){
+                       Oggetto oggettoPostato =  new Oggetto(quantita, 99, 99, prezzo, nome, url, descrizione);
                        request.setAttribute("oggettoPostato", oggettoPostato);
                        request.setAttribute("venditore", true);
                        request.getRequestDispatcher("venditore.jsp").forward(request, response);

@@ -35,7 +35,7 @@ public class OggettoFactory {
         */
         
         Oggetto oggetto0 = new Oggetto ();
-        oggetto0.setQuantità(7);
+        oggetto0.setQuantita(7);
         oggetto0.setId(10);
         oggetto0.setVenditoreId(7);
         oggetto0.setPrezzo(149.99);
@@ -49,7 +49,7 @@ public class OggettoFactory {
         */
         
         Oggetto oggetto1 = new Oggetto ();
-        oggetto1.setQuantità(0);
+        oggetto1.setQuantita(0);
         oggetto1.setId(11);
         oggetto1.setVenditoreId(7);
         oggetto1.setPrezzo(0);
@@ -62,7 +62,7 @@ public class OggettoFactory {
         */
         
         Oggetto oggetto2 = new Oggetto ();
-        oggetto2.setQuantità(5);
+        oggetto2.setQuantita(5);
         oggetto2.setId(12);
         oggetto2.setVenditoreId(7);
         oggetto2.setPrezzo(99.99);
@@ -75,7 +75,7 @@ public class OggettoFactory {
         */
         
         Oggetto oggetto3 = new Oggetto ();
-        oggetto3.setQuantità(6);
+        oggetto3.setQuantita(6);
         oggetto3.setId(13);
         oggetto3.setVenditoreId(7);
         oggetto3.setPrezzo(299.99);
@@ -88,7 +88,7 @@ public class OggettoFactory {
         */
         
         Oggetto oggetto4 = new Oggetto ();
-        oggetto4.setQuantità(0);
+        oggetto4.setQuantita(0);
         oggetto4.setId(14);
         oggetto4.setVenditoreId(7);
         oggetto4.setPrezzo(499.99);
@@ -101,7 +101,7 @@ public class OggettoFactory {
         */
         
         Oggetto oggetto5 = new Oggetto ();
-        oggetto5.setQuantità(2);
+        oggetto5.setQuantita(2);
         oggetto5.setId(15);
         oggetto5.setVenditoreId(7);
         oggetto5.setPrezzo(999.99);
