@@ -27,10 +27,10 @@
       <div class="content">
              <c:choose>
                  <c:when test="${not empty compratore && not empty complimenti}">
-                     <div>Acquisto completato</div>
+                     <div><h2 class="acquisto">Acquisto completato</h2></div>
                  </c:when>
                  <c:when test="${not empty compratore && not empty riprova}">
-                     <div>Riprova</div>
+                     <div><h2 class="acquisto">Riprova</h2></div>
                  </c:when>
                  <c:when test="${empty dettagli && not empty compratore}">
             <table>

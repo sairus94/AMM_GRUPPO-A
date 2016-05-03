@@ -53,7 +53,7 @@ public class Cliente extends HttpServlet {
                    int oggettoId = Integer.parseInt(request.getParameter("acquisto"));
                    double oggettoPrezzo = OggettoFactory.getInstance().getoggettoById(oggettoId).getPrezzo();
                    int oggettoQuantita = OggettoFactory.getInstance().getoggettoById(oggettoId).getQuantita();
-                   double soldi = AccountFactory.getIstance().getaccountById(oggettoId).getSoldi();
+                   double soldi = AccountFactory.getIstance().getAccountById(nuovoCompratore.getId()).getSoldi();
                   
                    if(oggettoPrezzo < soldi && oggettoQuantita > 0){
                        request.setAttribute("complimenti", true);

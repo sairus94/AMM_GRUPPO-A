@@ -13,6 +13,15 @@ public class Account {
     
      private int id;
      private double soldi; 
+     
+     public Account(){
+        
+    }
+    
+    public Account(int userId, double balance){
+        this.id = id;
+        this.soldi = soldi;
+    }
 
     /**
      * @return the id

@@ -21,6 +21,8 @@ public class AccountFactory {
                     }   
      return singleton;
         } 
+
+   
     
     private AccountFactory (){
         
@@ -32,7 +34,7 @@ public class AccountFactory {
         
         Account account0 = new Account ();
         account0.setId(1);
-        account0.setSoldi(999.99);
+        account0.setSoldi(1.99);
         accountList.add(account0);
         
         Account account1 = new Account ();
@@ -42,11 +44,11 @@ public class AccountFactory {
         
         return accountList;
     }
-         public Account getaccountById(int Id){
+         public Account getAccountById(int id){
              
-             ArrayList<Account> AccountList = this.getAccountList();
-             for(Account account : AccountList) {
-                 if(account.getId() == Id ) {
+             ArrayList<Account> accountList = this.getAccountList();
+             for(Account account : accountList) {
+                 if(account.getId() == id ) {
                      return account;
                  }
              }
