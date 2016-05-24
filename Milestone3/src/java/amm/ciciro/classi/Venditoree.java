@@ -11,11 +11,11 @@ package amm.ciciro.classi;
  */
 public class Venditoree {
     
-    private int userId;
-    private String nome;
-    private String cognome;
-    private String username;
-    private String password;
+    public int userId;
+    public String nome;
+    public String cognome;
+    public String username;
+    public String password;
 
     /**
      * @return the userId
@@ -85,6 +85,10 @@ public class Venditoree {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    void setId(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

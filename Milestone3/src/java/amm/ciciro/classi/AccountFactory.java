@@ -4,7 +4,16 @@
  * and open the template in the editor.
  */
 package amm.ciciro.classi;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,46 +22,128 @@ import java.util.ArrayList;
 public class AccountFactory {
     
     private static AccountFactory singleton;
-    
-    public static AccountFactory getIstance() {
+    String connectionString;
+    public static AccountFactory getInstance() {
     
         if (singleton == null) {
             singleton = new AccountFactory ();
                     }   
      return singleton;
         } 
-
    
+    //costruttore
+  
+    private AccountFactory () {
     
-    private AccountFactory (){
+}
+    
+     public Account getAccount(String id, String soldi) throws SQLException
+    {
+      try
+        {
+            Connection conn = DriverManager
+                    .getConnection(connectionString, 
+                            "ciroDB",
+                            "0");   
+            String query = "select * from Account where"
+                    + "id = ? and soldi = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            stmt.setString(1, id);
+            stmt.setString(2, soldi);
+            
+            ResultSet set = stmt.executeQuery();
+            
+            if(set.next())
+            {
+        Account account = new Account();
+        account.id = set.getInt("id");
+        account.soldi = set.getDouble("soldi");
         
+        
+            stmt.close();
+            conn.close();
+            return account;
+            }
+            
     }
+     catch(SQLException e)
+        {
+            
+        }
+        return null;
     
-    public ArrayList<Account> getAccountList (){
-        
-        ArrayList<Account> accountList = new ArrayList<> () ;
-        
-        Account account0 = new Account ();
-        account0.setId(1);
-        account0.setSoldi(1.99);
-        accountList.add(account0);
-        
-        Account account1 = new Account ();
-        account1.setId(2);
-        account1.setSoldi(568.22);
-        accountList.add(account1);   
-        
+    }
+     public Account getAccount(int id){
+         
+          try 
+        {
+           
+            Connection conn = DriverManager.getConnection(connectionString, "ciroDB", "0");
+            // Query
+            String query = "select * from Account "
+            + "where id = ?";
+           
+            PreparedStatement stmt = conn.prepareStatement(query);
+           
+            stmt.setInt(1, id);
+           
+            ResultSet res = stmt.executeQuery();
+            
+             if(res.next()) 
+            {
+                Account current = new Account();
+                current.setId(res.getInt("id"));
+                current.setSoldi(res.getDouble("soldi"));
+                
+                
+                stmt.close();
+                conn.close();
+                return current;
+     }
+             stmt.close();
+             conn.close();
+        }
+             catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+        return null;
+    }
+     public ArrayList<Account> getAccount()
+     {
+     ArrayList<Account> accountList = new ArrayList <> ();
+     
+     try 
+        {
+           
+            Connection conn = DriverManager.getConnection(connectionString, "ciroDB", "0");
+            Statement stmt = conn.createStatement();
+            String query = "select * from Account";
+            ResultSet set = stmt.executeQuery(query);
+            
+            while(set.next())
+            {
+                Account current = new Account();
+                
+                    current.setId(set.getInt("id"));
+                    current.setSoldi(set.getDouble("soldi"));
+                    accountList.add(current);
+                }
+            stmt.close();
+            conn.close();
+        }
+        catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
         return accountList;
+     }
+     public void setConnectionString(String s){
+	this.connectionString = s;
     }
-         public Account getAccountById(int id){
-             
-             ArrayList<Account> accountList = this.getAccountList();
-             for(Account account : accountList) {
-                 if(account.getId() == id ) {
-                     return account;
-                 }
-             }
-             return null;
-         } 
-    
+    public String getConnectionString(){
+	return this.connectionString;
+    }
+
 }

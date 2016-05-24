@@ -21,6 +21,7 @@ public class OggettoFactory {
         }
         return singleton;
     }
+    private String connectionString;
     
     private OggettoFactory() {
 
@@ -122,6 +123,13 @@ public class OggettoFactory {
         }
         return null;
     }
+     
+      public void setConnectionString(String s){
+	this.connectionString = s;
+}
+    public String getConnectionString(){
+	return this.connectionString;
+} 
     
 }
 

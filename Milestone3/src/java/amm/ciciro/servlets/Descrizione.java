@@ -5,8 +5,14 @@
  */
 package amm.ciciro.servlets;
 
+import amm.ciciro.classi.AccountFactory;
+import amm.ciciro.classi.CompratoreFactory;
+import amm.ciciro.classi.OggettoFactory;
+import amm.ciciro.classi.VenditoreeFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,9 +23,12 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Ciro
  */
-@WebServlet(name = "Descrizione", urlPatterns = {"/descrizione.html"})
+@WebServlet(name = "Descrizione", urlPatterns = {"/descrizione.html"},
+        loadOnStartup = 0)
 public class Descrizione extends HttpServlet {
-
+    
+    
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

@@ -11,8 +11,8 @@ package amm.ciciro.classi;
  */
 public class Account {
     
-     private int id;
-     private double soldi; 
+     public int id;
+     public double soldi; 
      
      public Account(){
         

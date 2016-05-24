@@ -5,13 +5,18 @@
  */
 package amm.ciciro.servlets;
 
+import amm.ciciro.classi.AccountFactory;
 import amm.ciciro.classi.Compratore;
 import amm.ciciro.classi.CompratoreFactory;
+import amm.ciciro.classi.OggettoFactory;
 import amm.ciciro.classi.Venditoree;
 import amm.ciciro.classi.VenditoreeFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,9 +28,27 @@ import javax.servlet.http.HttpSession;
  *
  * @author Ciro
  */
-@WebServlet(name = "Login", urlPatterns = {"/login.html"})
+@WebServlet(name = "Login", urlPatterns = {"/login.html"},
+    loadOnStartup = 0)
 public class Login extends HttpServlet {
-
+    private static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
+    private static final String DB_CLEAN_PATH = "../../web/WEB-INF/db/ammdb";
+    private static final String DB_BUILD_PATH = "WEB-INF/db/ammdb";
+    
+    @Override 
+    public void init(){
+        String dbConnection = "jdbc:derby:" + this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
+        try {
+            Class.forName(JDBC_DRIVER);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        OggettoFactory.getInstance().setConnectionString(dbConnection);
+        VenditoreeFactory.getInstance().setConnectionString(dbConnection);
+        CompratoreFactory.getInstance().setConnectionString(dbConnection);
+        AccountFactory.getInstance().setConnectionString(dbConnection);
+    }
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -34,9 +57,10 @@ public class Login extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
        
             HttpSession session = request.getSession(true);
@@ -48,49 +72,41 @@ public class Login extends HttpServlet {
         {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            ArrayList<Compratore> compratoreList = CompratoreFactory.getInstance().getCompratoreList();
-            for(Compratore c : compratoreList)
-                  
+            
+             Compratore c = CompratoreFactory.getInstance().getCompratore(username, password);
+            if(c != null)
             {
-                    if(c.getUsername().equals(username)&&
-                       c.getPassword().equals(password))
-                    {
-                      session.setAttribute("utente_autenticato", c);  
-                      session.setAttribute("compratore_autenticato", c);
-                      response.sendRedirect("cliente.html");
-                      return;
-                      
-                    }
+             session.setAttribute("compratore_autenticato", true);
+             session.setAttribute("userId", c.getId());
+             request.getRequestDispatcher("cliente.jsp").forward(request, response);
+             
+                
+            }
+            Venditoree v = VenditoreeFactory.getInstance().getVenditoree(username, password);
+            if(v != null)
+            {
+             session.setAttribute("venditore_autenticato", true);
+             session.setAttribute("userId", v.getUserId());
+             request.getRequestDispatcher("venditore.jsp").forward(request, response);
+             
             }
             
-            ArrayList<Venditoree> venditoreList = VenditoreeFactory.getInstance().getVenditoreList();
-            for(Venditoree v : venditoreList)
-                  
-            {
-                    if(v.getUsername().equals(username)&&
-                       v.getPassword().equals(password))
-                        
-                    {
-                      session.setAttribute("utente_autenticato", v);  
-                      session.setAttribute("venditore_autenticato", v);
-                      response.sendRedirect("venditore.html");
-                      return;
-                    }
+           
        
             }
             if( session.getAttribute("utente_autenticato") == null){
                 session.setAttribute("login_fallito", true);
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-        }
-         else {
+            else {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
+    
     }
-                  
+
         
-        
-        
+            
+      
             
         
 
@@ -107,7 +123,11 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -121,7 +141,11 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -133,6 +157,7 @@ public class Login extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-}
 
 
+
+    }

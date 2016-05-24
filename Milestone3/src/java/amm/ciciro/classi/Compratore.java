@@ -11,11 +11,11 @@ package amm.ciciro.classi;
  */
 public class Compratore {
     
-    private int userId;
-    private String nome;
-    private String cognome;
-    private String username;
-    private String password;
+    public int userId;
+    public String nome;
+    public String cognome;
+    public String username;
+    public String password;
     
     public Compratore() {
     }
