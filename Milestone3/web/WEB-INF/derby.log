@@ -1,7 +1,7 @@
-Tue May 24 15:12:29 CEST 2016 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+Wed May 25 16:19:48 CEST 2016 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Tue May 24 15:12:30 CEST 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0154-e2e5-2774-ffff8c587171 
+Wed May 25 16:19:49 CEST 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0154-e849-2655-ffff8c587171 
 on database directory C:\Users\Ciro\amm\AMM_GRUPPO-A\Milestone3\web\WEB-INF\ciroDB with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
 Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_91/db/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -13,8 +13,9 @@ os.version=10.0
 derby.system.home=C:\Users\Ciro\amm\AMM_GRUPPO-A\Milestone3\web\WEB-INF
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Tue May 24 15:21:52 CEST 2016: Shutting down Derby engine
+Wed May 25 16:32:19 CEST 2016:
+Shutting down instance a816c00e-0154-e849-2655-ffff8c587171 on database directory C:\Users\Ciro\amm\AMM_GRUPPO-A\Milestone3\web\WEB-INF\ciroDB with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Wed May 25 16:32:19 CEST 2016 Thread[DRDAConnThread_3,5,main] (DATABASE = ciroDB), (DRDAID = {2}), Database 'ciroDB' shutdown.
 ----------------------------------------------------------------
-Tue May 24 15:21:52 CEST 2016:
-Shutting down instance a816c00e-0154-e2e5-2774-ffff8c587171 on database directory C:\Users\Ciro\amm\AMM_GRUPPO-A\Milestone3\web\WEB-INF\ciroDB with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Wed May 25 16:36:14 CEST 2016: Shutting down Derby engine
 ----------------------------------------------------------------

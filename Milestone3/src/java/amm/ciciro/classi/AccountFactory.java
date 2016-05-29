@@ -74,7 +74,7 @@ public class AccountFactory {
         return null;
     
     }
-     public Account getAccount(int id){
+     public Account getAccountById(int id){
          
           try 
         {

@@ -45,8 +45,8 @@ public class CompratoreFactory {
         {
             Connection conn = DriverManager
                     .getConnection(connectionString, 
-                            "ciroDB",
-                            "0");   
+                            "ciro",
+                            "ciro");   
             String query = "select * from Compratore where"
                     + "password = ? and username = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -78,12 +78,12 @@ public class CompratoreFactory {
         return null;
     
     }
-     public Compratore getCompratore(int userId){
+     public Compratore getCompratoreById(int userId){
          
           try 
         {
            
-            Connection conn = DriverManager.getConnection(connectionString, "ciroDB", "0");
+            Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             
             String query = "select * from Compratore "
             + "where userId = ?";
@@ -117,14 +117,14 @@ public class CompratoreFactory {
         }
         return null;
     }
-     public ArrayList<Compratore> getCompratore()
+     public ArrayList<Compratore> getCompratoreList()
      {
      ArrayList<Compratore> compratoreList = new ArrayList <> ();
      
      try 
         {
            
-            Connection conn = DriverManager.getConnection(connectionString, "ciroDB", "0");
+            Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             Statement stmt = conn.createStatement();
             String query = "select * from Compratore";
             ResultSet set = stmt.executeQuery(query);
@@ -156,10 +156,9 @@ public class CompratoreFactory {
 	return this.connectionString;
     }
 
-    public ArrayList<Compratore> getCompratoreList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
          }
+
 
 
 

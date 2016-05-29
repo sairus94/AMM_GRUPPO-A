@@ -37,14 +37,14 @@ public class VenditoreeFactory {
         
     }
     
-     public Venditoree getVenditoree(String username, String password) throws SQLException
+     public Venditoree getVenditoree(String username, String password)
     {
       try
         {
             Connection conn = DriverManager
                     .getConnection(connectionString, 
-                            "ciroDB",
-                            "0");   
+                            "ciro",
+                            "ciro");   
             String query = "select * from Venditore where"
                     + "password = ? and username = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -71,17 +71,17 @@ public class VenditoreeFactory {
     }
      catch(SQLException e)
         {
-            
+            e.printStackTrace();
         }
         return null;
     
     }
-     public Venditoree getVenditoree(int userId){
+     public Venditoree getVenditoreeById(int userId){
          
           try 
         {
            
-            Connection conn = DriverManager.getConnection(connectionString, "ciroDB", "0");
+            Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             // Query
             String query = "select * from Venditore "
             + "where userId = ?";
@@ -115,14 +115,14 @@ public class VenditoreeFactory {
         }
         return null;
     }
-     public ArrayList<Venditoree> getVenditoree()
+     public ArrayList<Venditoree> getVenditoreeList()
      {
      ArrayList<Venditoree> venditoreList = new ArrayList <> ();
      
      try 
         {
            
-            Connection conn = DriverManager.getConnection(connectionString, "ciroDB", "0");
+            Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             Statement stmt = conn.createStatement();
             String query = "select * from Venditore";
             ResultSet set = stmt.executeQuery(query);
@@ -154,10 +154,9 @@ public class VenditoreeFactory {
 	return this.connectionString;
     }
 
-    public ArrayList<Venditoree> getVenditoreList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
          }
+
 
 
 

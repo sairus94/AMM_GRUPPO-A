@@ -78,8 +78,8 @@ public class Login extends HttpServlet {
             {
              session.setAttribute("compratore_autenticato", true);
              session.setAttribute("userId", c.getId());
-             request.getRequestDispatcher("cliente.jsp").forward(request, response);
-             
+             response.sendRedirect("cliente.html");
+             return;
                 
             }
             Venditoree v = VenditoreeFactory.getInstance().getVenditoree(username, password);
@@ -87,8 +87,8 @@ public class Login extends HttpServlet {
             {
              session.setAttribute("venditore_autenticato", true);
              session.setAttribute("userId", v.getUserId());
-             request.getRequestDispatcher("venditore.jsp").forward(request, response);
-             
+             response.sendRedirect("venditore.html");
+             return;
             }
             
            
