@@ -66,43 +66,42 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession(true);
 
             
-            //Login del compratore
+     
             
-        if(request.getParameter("Submit") != null)    
+            if(request.getParameter("Submit") != null)
         {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            
-             Compratore c = CompratoreFactory.getInstance().getCompratore(username, password);
-            if(c != null)
-            {
-             session.setAttribute("compratore_autenticato", true);
-             session.setAttribute("userId", c.getId());
-             response.sendRedirect("cliente.html");
-             return;
-                
-            }
-            Venditoree v = VenditoreeFactory.getInstance().getVenditoree(username, password);
-            if(v != null)
-            {
-             session.setAttribute("venditore_autenticato", true);
-             session.setAttribute("userId", v.getUserId());
-             response.sendRedirect("venditore.html");
-             return;
-            }
-            
-           
-       
-            }
-            if( session.getAttribute("utente_autenticato") == null){
-                session.setAttribute("login_fallito", true);
-                request.getRequestDispatcher("login.jsp").forward(request, response);
-            }
-            else {
+            try {
+                Compratore c = CompratoreFactory.getInstance().getCompratore(username,password);
+                if (c != null) {
+                    if (c != null){
+                        session.setAttribute("compratore_autenticato", c);
+                        response.sendRedirect("cliente.html");  
+                        return;
+                    } 
+                    Venditoree v = VenditoreeFactory.getInstance().getVenditoree(username, password);
+                     if (v != null){
+                        session.setAttribute("venditore_auteniticato", v);
+                        response.sendRedirect("venditore.html");  
+                        return;
+                    }                    
+                }
+            } catch(SQLException e){
+                e.printStackTrace();
+            } 
+            request.setAttribute("login_fallito", true);
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
-    
+        
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+
     }
+
+
+            
+           
+            
 
         
             

@@ -49,8 +49,8 @@ VALUES (3, "Gigi", "Mereu", "Gimmy", "aa"),
        (4, "gabriele", "piras", "eldiablo", "bb");
 
 INSERT INTO Venditore (userId, nome, cognome, username, password)
-VALUES (1, "Babbo", "Natale", "babbo", "cc",10),
-       (2, "Andrea", "Casti", "aereo", "plano", 11);
+VALUES (1, "Babbo", "Natale", "babbo", "cc"),
+       (2, "Andrea", "Casti", "aereo", "plano");
 
 INSERT INTO Oggetti (venditoreId, id, quantita, nome, prezzo, url, descrizione,)
 VALUES (1, 7, "Set di chips", 149, "./img/chips.jpg", "generico"),
