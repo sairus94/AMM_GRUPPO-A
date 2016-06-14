@@ -12,3 +12,9 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=C:\Users\Ciro\amm\AMM_GRUPPO-A\Milestone3\web\WEB-INF\db
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Jun 14 13:38:12 CEST 2016: Shutting down Derby engine
+----------------------------------------------------------------
+Tue Jun 14 13:38:12 CEST 2016:
+Shutting down instance a816c00e-0155-4e9c-7ece-0000283ab2c9 on database directory C:\Users\Ciro\amm\AMM_GRUPPO-A\Milestone3\web\WEB-INF\db\ammdb with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+----------------------------------------------------------------
