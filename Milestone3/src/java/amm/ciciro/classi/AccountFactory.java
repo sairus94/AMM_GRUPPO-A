@@ -79,7 +79,7 @@ public class AccountFactory {
           try 
         {
            
-            Connection conn = DriverManager.getConnection(connectionString, "ciroDB", "0");
+            Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             // Query
             String query = "select * from Account "
             + "where id = ?";
@@ -117,7 +117,7 @@ public class AccountFactory {
      try 
         {
            
-            Connection conn = DriverManager.getConnection(connectionString, "ciroDB", "0");
+            Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             Statement stmt = conn.createStatement();
             String query = "select * from Account";
             ResultSet set = stmt.executeQuery(query);

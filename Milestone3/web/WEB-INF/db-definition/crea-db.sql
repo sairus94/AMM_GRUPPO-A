@@ -52,12 +52,12 @@ INSERT INTO Venditore (userId, nome, cognome, username, password)
 VALUES (1, "Babbo", "Natale", "babbo", "cc"),
        (2, "Andrea", "Casti", "aereo", "plano");
 
-INSERT INTO Oggetti (venditoreId, id, quantita, nome, prezzo, url, descrizione,)
-VALUES (1, 7, "Set di chips", 149, "./img/chips.jpg", "generico"),
-       (1, 0, "Donna dell'est", 0, "./img/donne.jpg", "generico"),
-       (1, 3, "Mazzo di carte", 349, "./img/cards.jpg", "generico"),
-       (2, 1, "Tavolo da poker", 399, "./img/tavolo.jpg", "generico"),
-       (2, 5, "Pistola contro i bari", 799, "./img/pistola.jpg", "generico"),
+INSERT INTO Oggetti (id, venditoreId, quantita, nome, prezzo, url, descrizione,)
+VALUES (7, 1, "Set di chips", 149, "./img/chips.jpg", "generico"),
+       (0, 1, "Donna dell'est", 0, "./img/donne.jpg", "generico"),
+       (3, 1, "Mazzo di carte", 349, "./img/cards.jpg", "generico"),
+       (1, 2, "Tavolo da poker", 399, "./img/tavolo.jpg", "generico"),
+       (5, 2, "Pistola contro i bari", 799, "./img/pistola.jpg", "generico"),
        (2, 2, "Slot machine", 999, "./img/slot.jpg", "generico");
 
 INSERT INTO Account (id, soldi)

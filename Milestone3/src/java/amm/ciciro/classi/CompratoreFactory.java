@@ -44,9 +44,9 @@ public class CompratoreFactory {
       try
         {
             Connection conn = DriverManager
-                    .getConnection(connectionString, 
-                            "ciro",
-                            "ciro");   
+                    .getConnection(connectionString,  "ciro","ciro");
+                            
+                              
             String query = "select * from Compratore where"
                     + "password = ? and username = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -59,7 +59,7 @@ public class CompratoreFactory {
             if(set.next())
             {
         Compratore compratore = new Compratore();
-        compratore.userId = set.getInt("userId");
+        compratore.userId = set.getInt("id");
         compratore.nome = set.getString("nome");
         compratore.cognome = set.getString("cognome");
         compratore.username = set.getString("username");
@@ -73,7 +73,7 @@ public class CompratoreFactory {
     }
      catch(SQLException e)
         {
-            
+            e.printStackTrace(); 
         }
         return null;
     
@@ -86,7 +86,7 @@ public class CompratoreFactory {
             Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             
             String query = "select * from Compratore "
-            + "where userId = ?";
+            + "where id = ?";
             
             PreparedStatement stmt = conn.prepareStatement(query);
             
@@ -97,7 +97,7 @@ public class CompratoreFactory {
              if(res.next()) 
             {
                 Compratore current = new Compratore();
-                current.setId(res.getInt("userId"));
+                current.setId(res.getInt("id"));
                 current.setNome(res.getString("nome"));
                 current.setCognome(res.getString("cognome"));
                 current.setUsername(res.getString("username"));
@@ -133,7 +133,7 @@ public class CompratoreFactory {
             {
                 Compratore current = new Compratore();
                 
-                    current.setId(set.getInt("userId"));
+                    current.setId(set.getInt("id"));
                     current.setNome(set.getString("nome"));
                     current.setCognome(set.getString("cognome"));
                     current.setUsername(set.getString("username"));

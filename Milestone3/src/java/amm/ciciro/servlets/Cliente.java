@@ -51,8 +51,8 @@ public class Cliente extends HttpServlet {
                 
                  if(request.getParameter("acquisto") != null){
                    int oggettoId = Integer.parseInt(request.getParameter("acquisto"));
-                   double oggettoPrezzo = OggettoFactory.getInstance().getoggettoById(oggettoId).getPrezzo();
-                   int oggettoQuantita = OggettoFactory.getInstance().getoggettoById(oggettoId).getQuantita();
+                   double oggettoPrezzo = OggettoFactory.getInstance().getOggettoById(oggettoId).getPrezzo();
+                   int oggettoQuantita = OggettoFactory.getInstance().getOggettoById(oggettoId).getQuantita();
                    double soldi = AccountFactory.getInstance().getAccountById(nuovoCompratore.getId()).getSoldi();
                   
                    if(oggettoPrezzo < soldi && oggettoQuantita > 0){
@@ -68,7 +68,7 @@ public class Cliente extends HttpServlet {
                  else 
                      if(request.getParameter("oggettoId") != null){
                         int oggettoId = Integer.parseInt(request.getParameter("oggettoId"));
-                        Oggetto oggetto = OggettoFactory.getInstance().getoggettoById(oggettoId);
+                        Oggetto oggetto = OggettoFactory.getInstance().getOggettoById(oggettoId);
                         request.setAttribute("dettagli",oggetto);
                         request.getRequestDispatcher("cliente.jsp").forward(request, response);
                      }
