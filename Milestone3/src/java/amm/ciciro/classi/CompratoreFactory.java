@@ -39,12 +39,13 @@ public class CompratoreFactory {
     
 }
     
-     public Compratore getCompratore(String username, String password) throws SQLException
+     public Compratore getCompratore(String username, String password) 
     {
       try
         {
-            Connection conn = DriverManager
-                    .getConnection(connectionString,  "ciro","ciro");
+            Connection conn;
+          conn = DriverManager
+                  .getConnection(connectionString,  "ciro","ciro");
                             
                               
             String query = "SELECT * FROM Compratore"

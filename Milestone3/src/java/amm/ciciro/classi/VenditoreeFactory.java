@@ -41,10 +41,11 @@ public class VenditoreeFactory {
     {
       try
         {
-            Connection conn = DriverManager
-                    .getConnection(connectionString, 
-                            "ciro",
-                            "ciro");   
+            Connection conn;
+          conn = DriverManager
+                  .getConnection(connectionString,
+                          "ciro",   
+                          "ciro");
             String query = "SELECT * FROM Venditore"
                     + "WHERE password = ? and username = ?";
             PreparedStatement stmt = conn.prepareStatement(query);

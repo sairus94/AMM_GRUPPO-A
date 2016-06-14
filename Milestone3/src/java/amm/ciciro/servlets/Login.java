@@ -72,24 +72,20 @@ public class Login extends HttpServlet {
         {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            try {
-                Compratore c = CompratoreFactory.getInstance().getCompratore(username,password);
-                if (c != null) {
-                    if (c != null){
-                        session.setAttribute("compratore_autenticato", c);
-                        response.sendRedirect("cliente.html");  
-                        return;
-                    } 
-                    Venditoree v = VenditoreeFactory.getInstance().getVenditoree(username, password);
-                     if (v != null){
-                        session.setAttribute("venditore_auteniticato", v);
-                        response.sendRedirect("venditore.html");  
-                        return;
-                    }                    
+            Compratore c = CompratoreFactory.getInstance().getCompratore(username,password);
+            if (c != null) {
+                if (c != null){
+                    session.setAttribute("compratore_autenticato", c);
+                    response.sendRedirect("cliente.html");
+                    return;                    
                 }
-            } catch(SQLException e){
-                e.printStackTrace();
-            } 
+                Venditoree v = VenditoreeFactory.getInstance().getVenditoree(username, password);
+                if (v != null){
+                    session.setAttribute("venditore_auteniticato", v); 
+                    response.sendRedirect("venditore.html");
+                    return;
+                }
+            }
             request.setAttribute("login_fallito", true);
             
         }
