@@ -47,8 +47,8 @@ public class CompratoreFactory {
                     .getConnection(connectionString,  "ciro","ciro");
                             
                               
-            String query = "select * from Compratore where"
-                    + "password = ? and username = ?";
+            String query = "SELECT * FROM Compratore"
+                    + "WHERE password = ? and username = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
             
             stmt.setString(1, password);
@@ -85,8 +85,8 @@ public class CompratoreFactory {
            
             Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             
-            String query = "select * from Compratore "
-            + "where id = ?";
+            String query = "SELECT * FROM Compratore "
+            + "WHERE id = ?";
             
             PreparedStatement stmt = conn.prepareStatement(query);
             
@@ -126,7 +126,7 @@ public class CompratoreFactory {
            
             Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             Statement stmt = conn.createStatement();
-            String query = "select * from Compratore";
+            String query = "SELECT * FROM Compratore";
             ResultSet set = stmt.executeQuery(query);
             
             while(set.next())

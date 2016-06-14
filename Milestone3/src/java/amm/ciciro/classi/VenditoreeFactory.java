@@ -45,8 +45,8 @@ public class VenditoreeFactory {
                     .getConnection(connectionString, 
                             "ciro",
                             "ciro");   
-            String query = "select * from Venditore where"
-                    + "password = ? and username = ?";
+            String query = "SELECT * FROM Venditore"
+                    + "WHERE password = ? and username = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
             
             stmt.setString(1, password);
@@ -83,8 +83,8 @@ public class VenditoreeFactory {
            
             Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             // Query
-            String query = "select * from Venditore "
-            + "where userId = ?";
+            String query = "SELECT * FROM Venditore "
+            + "WHERE userId = ?";
             // Prepared Statement
             PreparedStatement stmt = conn.prepareStatement(query);
             // Si associano i valori
@@ -124,7 +124,7 @@ public class VenditoreeFactory {
            
             Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             Statement stmt = conn.createStatement();
-            String query = "select * from Venditore";
+            String query = "SELECT * FROM Venditore";
             ResultSet set = stmt.executeQuery(query);
             
             while(set.next())

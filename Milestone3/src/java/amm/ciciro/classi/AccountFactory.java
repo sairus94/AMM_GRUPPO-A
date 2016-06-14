@@ -45,8 +45,8 @@ public class AccountFactory {
                     .getConnection(connectionString, 
                             "ciroDB",
                             "0");   
-            String query = "select * from Account where"
-                    + "id = ? and soldi = ?";
+            String query = "SELECT * from Account"
+                    + "WHERE id = ? and soldi = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
             
             stmt.setString(1, id);
@@ -81,8 +81,8 @@ public class AccountFactory {
            
             Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             // Query
-            String query = "select * from Account "
-            + "where id = ?";
+            String query = "SELECT * FROM Account "
+            + "WHERE id = ?";
            
             PreparedStatement stmt = conn.prepareStatement(query);
            
@@ -119,7 +119,7 @@ public class AccountFactory {
            
             Connection conn = DriverManager.getConnection(connectionString, "ciro", "ciro");
             Statement stmt = conn.createStatement();
-            String query = "select * from Account";
+            String query = "SELECT * FROM Account";
             ResultSet set = stmt.executeQuery(query);
             
             while(set.next())

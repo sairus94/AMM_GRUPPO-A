@@ -91,9 +91,9 @@ public class Login extends HttpServlet {
                 e.printStackTrace();
             } 
             request.setAttribute("login_fallito", true);
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            
         }
-        
+            
         request.getRequestDispatcher("login.jsp").forward(request, response);
        
 
